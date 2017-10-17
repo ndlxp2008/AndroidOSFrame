@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon="@drawable/ic_favorites"
+        id="@+id/tab_first"
+        title="首页" />
+    <tab
+        icon="@drawable/ic_nearby"
+        id="@+id/tab_second"
+        title="爆笑" />
+    <tab
+        icon="@drawable/ic_friends"
+        id="@+id/tab_third"
+        title="小说" />
+</tabs>

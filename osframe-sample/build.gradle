@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'fastdex.app'
+android {
+    compileSdkVersion rootProject.ext.COMPILE_SDK_VERSION
+    buildToolsVersion rootProject.ext.BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        applicationId "com.jaj.aho.example"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            multiDexEnabled true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:cardview-v7:$rootProject.APPCOMPAT_VERSION"
+    testCompile 'junit:junit:4.12'
+    compile project(path: ':osframe')
+    //jsoup爬数据
+    compile 'org.jsoup:jsoup:1.10.2'
+    //底部导航
+    compile 'com.roughike:bottom-bar:2.3.1'
+    //沉浸式状态栏
+    compile 'com.jaeger.statusbaruitl:library:1.3.6'
+    //recyclerview
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    //vlayout
+    compile ('com.alibaba.android:vlayout:1.2.2@aar') {
+        transitive = true
+    }
+
+    //搜索
+    compile 'com.wenwenwen888:searchbox:1.0.0'
+}

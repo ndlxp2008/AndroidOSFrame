@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.COMPILE_SDK_VERSION
+    buildToolsVersion rootProject.ext.BUILD_TOOLS_VERSION
+    defaultConfig {
+//        applicationId "com.jaj.aho.osframe"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.APPCOMPAT_VERSION"
+    compile "com.android.support:design:$rootProject.APPCOMPAT_VERSION"
+    testCompile 'junit:junit:4.12'
+    //Rxjava
+    //compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+// Because RxAndroid releases are few and fa r between, it is recommended you also
+// explicitly depend on RxJava's latest version for bug fixes and new features.
+    // compile 'io.reactivex.rxjava2:rxjava:2.x.y'
+    //Json解析库
+    compile 'com.alibaba:fastjson:1.1.54.android'
+    //图片加载、缓存库
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //Retrofit网络请求
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    // compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    compile 'com.github.franmontiel:PersistentCookieJar:v1.0.0'
+    //Fragment解决库
+    compile 'me.yokeyword:fragmentation:0.10.1'
+    //Log工具类
+    compile 'com.apkfuns.logutils:library:1.4.2'
+    //db数据库
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    //Recyclerview分割线
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    //butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //Rxlifecycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    //弹出消息
+    compile 'com.tapadoo.android:alerter:2.0.0'
+    //工具类
+    compile 'com.blankj:utilcode:1.5.0'
+
+}

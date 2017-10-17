@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">example</string>
+    <string name="simple_view_behavior">com.jaj.aho.example.widget.Behavior.SimpleViewBehavior</string>
+</resources>
