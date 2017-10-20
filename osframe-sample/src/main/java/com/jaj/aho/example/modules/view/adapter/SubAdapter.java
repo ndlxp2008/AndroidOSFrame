@@ -19,13 +19,9 @@ import com.jaj.aho.example.R;
 
 public class SubAdapter extends DelegateAdapter.Adapter<SubAdapter.MainViewHolder> {
     private Context mContext;
-
     private LayoutHelper mLayoutHelper;
-
-
     private VirtualLayoutManager.LayoutParams mLayoutParams;
     private int mCount = 0;
-
 
     public SubAdapter(Context context, LayoutHelper layoutHelper, int count) {
         this(context, layoutHelper, count, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300));

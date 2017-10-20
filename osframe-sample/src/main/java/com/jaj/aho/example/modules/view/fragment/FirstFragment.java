@@ -66,6 +66,7 @@ public class FirstFragment extends BaseMvpFragment implements Toolbar.OnMenuItem
     private void setStatusBar() {
         setHasOptionsMenu(true);
         StatusBarUtil.setColor(getActivity(), Color.parseColor("#469FEC"), 0);
+
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         if (((AppCompatActivity) getActivity()).getSupportActionBar() != null) {
             ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
